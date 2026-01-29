@@ -65,7 +65,7 @@ cfnew/
 ├── scripts/               # 构建脚本
 │   └── obfuscate.js       # 代码混淆脚本
 ├── dist/                  # 构建输出目录
-│   └── 少年你相信光吗     # 混淆后的代码
+│   └── worker.js          # Obfuscated worker code
 ├── .github/               # GitHub Actions 工作流
 ├── package.json           # 项目配置
 └── README.md              # 项目文档
@@ -85,7 +85,7 @@ pnpm install
 pnpm build
 ```
 
-构建脚本会读取 `src/main.ts`，进行代码混淆，并输出到 `dist/少年你相信光吗`。
+构建脚本会读取 `src/main.ts`，进行代码混淆，并输出到 `dist/worker.js`。
 
 #### 部署
 

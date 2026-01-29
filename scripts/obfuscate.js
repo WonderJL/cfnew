@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const sourceFileName = 'main.ts';
-const outputFileName = '少年你相信光吗';
+const outputFileName = 'worker.js';
 const distDir = path.join(process.cwd(), 'dist');
 const srcDir = path.join(process.cwd(), 'src');
 const sourceFilePath = path.join(srcDir, sourceFileName);
