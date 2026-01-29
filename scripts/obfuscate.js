@@ -60,7 +60,14 @@ const obfuscationOptions = {
     domainLock: []
 };
 
-const obfuscatedCode = JavaScriptObfuscator.obfuscate(originalCode, obfuscationOptions).getObfuscatedCode();
+let obfuscatedCode = JavaScriptObfuscator.obfuscate(originalCode, obfuscationOptions).getObfuscatedCode();
+
+// Restore the import specifier to ensure Cloudflare Workers can parse it correctly
+// Replace hex-escaped 'cloudflare:sockets' with the plain string
+obfuscatedCode = obfuscatedCode.replace(
+    /import\s*\{[^}]+\}\s*from\s*['"]\\x63\\x6c\\x6f\\x75\\x64\\x66\\x6c\\x61\\x72\\x65\\x3a\\x73\\x6f\\x63\\x6b\\x65\\x74\\x73['"]/g,
+    "import{connect}from'cloudflare:sockets'"
+);
 
 fs.writeFileSync(outputFilePath, obfuscatedCode, 'utf8');
 console.log('成功将 \'' + sourceFileName + '\' 混淆并保存至 \'' + outputFilePath + '\'。');
