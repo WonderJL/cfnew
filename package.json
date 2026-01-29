@@ -1,0 +1,28 @@
+{
+  "name": "cfnew",
+  "version": "2.9.3",
+  "description": "CFnew - Cloudflare Worker VPN/Proxy Service",
+  "main": "src/main.ts",
+  "scripts": {
+    "build": "node scripts/obfuscate.js",
+    "dev": "echo 'Deploy to Cloudflare Workers for development'"
+  },
+  "keywords": [
+    "cloudflare",
+    "worker",
+    "vpn",
+    "proxy",
+    "vless",
+    "trojan"
+  ],
+  "dependencies": {
+    "javascript-obfuscator": "^4.1.0"
+  },
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/byJoey/cfnew"
+  }
+}

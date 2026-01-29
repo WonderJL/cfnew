@@ -55,7 +55,39 @@
 - Pages视频教程：https://www.youtube.com/watch?v=JhVxJChDL-E
 - Snippets视频教程：https://www.youtube.com/watch?v=xeFeH3Akcu8
 
-### 部署
+### 项目结构
+
+```
+cfnew/
+├── src/                    # 源代码目录
+│   ├── main.ts            # 主 Worker 脚本
+│   └── snippets.js        # Snippets 版本
+├── scripts/               # 构建脚本
+│   └── obfuscate.js       # 代码混淆脚本
+├── dist/                  # 构建输出目录
+│   └── 少年你相信光吗     # 混淆后的代码
+├── .github/               # GitHub Actions 工作流
+├── package.json           # 项目配置
+└── README.md              # 项目文档
+```
+
+### 开发
+
+#### 安装依赖
+
+```bash
+pnpm install
+```
+
+#### 构建
+
+```bash
+pnpm build
+```
+
+构建脚本会读取 `src/main.ts`，进行代码混淆，并输出到 `dist/少年你相信光吗`。
+
+#### 部署
 
 订阅每15分钟自动优选一次
 
